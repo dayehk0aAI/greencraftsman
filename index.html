@@ -37,6 +37,16 @@
   body { margin: 0; font-family: 'Noto Sans TC', system-ui, sans-serif; background: #F7F3E8; color: #22301F; }
   a { color: inherit; text-decoration: none; }
   .navlink:hover { color: #C97B4A; }
+  @keyframes news-marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+  }
+  .news-marquee-text {
+    display: inline-block;
+    padding-left: 100%;
+    animation: news-marquee 16s linear infinite;
+  }
+  .news-marquee-wrap:hover .news-marquee-text { animation-play-state: paused; }
   .btn-primary:hover { background: #B96A3A; }
   .btn-outline:hover { background: #22301F; color: #F7F3E8; }
   .card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(34,48,31,0.12); }
@@ -73,12 +83,24 @@
       </a>
       <div style="display: flex; gap: 28px; font-size: 15px; font-weight: 500; flex-wrap: wrap;">
         <a class="navlink" href="#home">首頁</a>
+        <a class="navlink" href="#news">最新消息</a>
         <a class="navlink" href="#about">關於我們</a>
         <a class="navlink" href="#products">產品項目</a>
         <a class="navlink" href="#quality">品質與認證</a>
         <a class="navlink" href="#oem">OEM／ODM 合作</a>
         <a class="navlink" href="#contact">聯絡我們</a>
       </div>
+    </div>
+  </div>
+
+  <!-- 最新消息（固定欄，跑馬燈效果；之後要換展覽/消息直接改 news-marquee-text 裡的文字跟連結即可） -->
+  <div id="news" style="width: 100%; background: #C97B4A; color: #FFFFFF;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 13px 32px; display: flex; align-items: center; gap: 14px;">
+      <span style="background: rgba(255,255,255,0.25); padding: 3px 12px; border-radius: 999px; font-size: 12px; font-weight: 700; letter-spacing: 1px; white-space: nowrap; flex-shrink: 0;">最新消息</span>
+      <div class="news-marquee-wrap" style="flex: 1 1 auto; min-width: 0; overflow: hidden; white-space: nowrap;">
+        <span class="news-marquee-text" style="font-size: 14px; font-weight: 500;">2026 第20屆雲林國際農業機械暨資材展｜10/17（六）－10/19（一）｜攤位 F-1 28-30（雲林虎尾高鐵特定區）</span>
+      </div>
+      <a href="images/exhibition-2026-yunlin.jpg" target="_blank" style="color: #FFFFFF; text-decoration: underline; font-weight: 700; font-size: 14px; white-space: nowrap; flex-shrink: 0;">查看攤位地圖 →</a>
     </div>
   </div>
 
